@@ -1,6 +1,7 @@
 # mbedtls-rsa-inprogress
 In-Progress work on MBED TLS power analysis (hopefully?) attack
 
+End goal is a fully working attack that can be published as a hands-on tutorial (alongisde various other ChipWhisperer tutorials, see https://chipwhisperer.readthedocs.io/en/latest/tutorials.html ).
 
 ## MBED-TLS expmod implementation
 
@@ -195,4 +196,4 @@ If using Jupyter, suggest to use holoviews with decimate/datashade plugins to sp
 
 ## Simple Things
 
-You can see differences in the two windows. 
+You can see differences in the two windows for example, but haven't fully brought that down...
