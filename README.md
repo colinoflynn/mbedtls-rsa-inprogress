@@ -11,13 +11,17 @@ Started at [SHARD workshop 2019](https://www.lorentzcenter.nl/lc/web/2019/1181/p
 
 End goal is a fully working attack that can be published as a hands-on tutorial using real data (idea - see various other ChipWhisperer tutorials, see https://chipwhisperer.readthedocs.io/en/latest/tutorials.html ).
 
+If you'd like to contribute please let us know!
+
 ## MBED-TLS expmod implementation
 
 The expmod function can be seen in https://github.com/ARMmbed/mbed-crypto/blob/master/library/bignum.c . The comments for that function suggest a sliding window is used ('Sliding-window exponentiation: X = A^E mod N  (HAC 14.85)'). The ref to HAC 14.85 (http://cacr.uwaterloo.ca/hac/about/chap14.pdf) directly points to sliding window algorithm.
 
-This suggests we could attack it given https://eprint.iacr.org/2017/627.pdf . However, in reality a fixed window is used. in the code.
+This suggests we could attack it given https://eprint.iacr.org/2017/627.pdf . However, the window is sliding but not variable-size. This slight change makes it difficult to do.
 
-This appears to be similar/same implementation to that attacked in https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-alam.pdf.
+Almost this exact implementation is attacked at https://media.ccc.de/v/SHA2017-169-attacking_openssl_using_side-channel_attacks (paper - https://pdfs.semanticscholar.org/38e5/b2c2c4194405932bd007d8fe01dd15b2becb.pdf).
+
+This appears to be similar to the attack in https://www.usenix.org/system/files/conference/usenixsecurity18/sec18-alam.pdf, but that work is attacking a "real" fixed window (no squaring-only of 0 bits).
 
 The relevant code for the function we are attacking is shown below:
 
