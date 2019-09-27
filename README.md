@@ -1,7 +1,15 @@
-# mbedtls-rsa-inprogress
-In-Progress work on MBED TLS power analysis (hopefully?) attack
+# In-Progress work on MBED TLS power analysis attack
 
-End goal is a fully working attack that can be published as a hands-on tutorial (alongisde various other ChipWhisperer tutorials, see https://chipwhisperer.readthedocs.io/en/latest/tutorials.html ).
+Started at [SHARD workshop 2019](https://www.lorentzcenter.nl/lc/web/2019/1181/program.php3?wsid=1181&venue=Oort), now ongoing experimentation. Joint discussions/work, thanks to many people! Partial list including (alphabetical order):
+
+* Sarani Bhattacharya
+* Lukasz Chmielewski
+* Daniel Genkin
+* Colin O'Flynn
+* Lennert Wouters
+* Yuval Yarom
+
+End goal is a fully working attack that can be published as a hands-on tutorial using real data (idea - see various other ChipWhisperer tutorials, see https://chipwhisperer.readthedocs.io/en/latest/tutorials.html ).
 
 ## MBED-TLS expmod implementation
 
@@ -195,6 +203,4 @@ If using Jupyter, suggest to use holoviews with decimate/datashade plugins to sp
 	hv.extension('bokeh')
 	datashade(hv.Curve(rsa_trace_full)).opts(width=900, height=600)
 
-## Simple Things
-
-You can see differences in the two windows for example, but haven't fully brought that down...
+This doesn't work on Colab however! So this is relevant if you are using your own Jupyter notebook.
