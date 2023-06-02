@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/558944841.svg)](https://zenodo.org/badge/latestdoi/558944841)
+
 # Complete power analysis attack on MBED-TLS 
 
 This repo contains a complete power analysis attack on MBED-TLS. This repository contains the notebook and traces for the master thesis:
